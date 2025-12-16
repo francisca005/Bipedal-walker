@@ -18,6 +18,7 @@ class InjuredBipedalWalker(BipedalWalker):
         # A ação é um vetor de 4 valores: [Anca1, Joelho1, Anca2, Joelho2]
         # Perna 1 (Esquerda) = índices 0 e 1
         # Perna 2 (Direita)  = índices 2 e 3
+        action = np.array(action, copy=True)
         
         # Aplicar o dano: Reduzir a força da perna direita
         action[2] = action[2] * self.damage_factor
